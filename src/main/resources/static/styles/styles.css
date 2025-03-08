@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --body-background-color:white;
+    --navbar-background-color: rgb(6, 87, 153);
+    --body-text-color: rgb(39, 35, 35);
+    --navbar-text-color: white;
+    --variant: rgb(139, 123, 0);
+    --gradiant-button-color: rgb(255, 132, 0);
+    --font-family: "Montserrat", sans-serif;
+    --label-text-color: black;
+}
+
+.darkmode{
+    --body-background-color: rgb(39, 35, 35);
+    --navbar-background-color: rgb(16, 178, 92);
+    --body-text-color: white;
+    --navbar-text-color: white;
+    --variant: rgb(139, 123, 0);
+    --gradiant-button-color: rgb(255, 132, 0);
+    --font-family: "Montserrat", sans-serif;
+    --label-text-color: white;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    background-color: var(--body-background-color);
+    color: var(--body-text-color);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--navbar-text-color);
+}
+
+header {
+    box-shadow: 0 2px 5px rgba(249, 17, 17, 0.1);
+    padding: 5px 2em;
+    position: sticky;
+    height: 80px;
+    top: 0;
+    z-index: 100;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--navbar-background-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+#light-on-off{
+    display:flex;
+    justify-content: flex-end;
+    padding: 20px 3%;
+    margin-top:auto;
+    /*these two lines are to avoid the static effect from the position; fixed of the navbar*/
+    position: relative; /* Ensure it's above other elements */
+    z-index: 1100; /* Higher than the navbar */
+}
+
+#light-on-off button {
+    background-color: var(--body-background-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#light-on-off button:hover {
+    background-color: var(--body-background-color);
+    color: var(--variant);
+    transform: scale(1,1);
+}
+
+#light-on-off svg{
+    fill: var(--navbar-background-color);
+}
+
+#light-on-off svg:last-child{
+    display:none;
+}
+
+.darkmode #light-on-off svg:first-child{
+    display:none;
+}
+
+.darkmode #light-on-off svg:last-child{
+    display: block;
+}
+
+#light-on-off button:hover {
+    background: var(--body-background-color);
+    color: var(--variant);
+    transform: translateY(1px);
+    box-shadow: 0 10px 20px rgba(6, 106, 214, 0.2);
+
+    & ::before{
+        opacity: 1;
+    }
+
+    & ::after {
+        content : "";
+        position:absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: linear-gradient(45deg,var(--navbar-background-color), rgb(196, 90, 33));
+        z-index: -1;
+    }
+}
+
+#light-on-off button:active{
+    transform: translateY(1px);
+    box-shadow: 0 5px 15px rgba(157, 255, 0, 0.3);
+}
+
+#light-on-off button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(174, 255, 0, 0.4);
+}
+
+.nav__bar {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000
+}
+
+.nav__links li {
+    position: relative; /* Added this to ensure the pseudo-element does not affect layout */
+}
+
+.nav__links {
+    display: inline-flex;
+    /* 
+    display: flex;
+    justify-content: space-between; these two lines are replaced with the line above
+    pretty much better... 
+    */
+    gap: 20px;
+    align-content: center;
+    padding: 30px 10%; /* a little padding to make the elements close to the center of the header to the center*/
+    list-style: none; /* this is here to remove the little point*/
+}
+
+.nav__links li a {
+    transition: all 0.3s ease-in;
+}
+
+/* this is actually when we hover on the links... 
+ik about it but just for reserve tehe*/
+.nav__links li a:hover {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav__links a:hover {
+    color: #dd00ff;
+    position: absolute;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+}
+
+.nav__links li a:after{
+    content: '';
+    position: absolute;
+    background-color: red;
+    height: 3px;
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    transition: width 0.03s ease-in-out, left 0.03s ease-in-out;
+    pointer-events: none;
+}
+
+.nav__links li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.container{
+    overflow: hidden;
+    margin-left: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.homeButton{
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+img {
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.io{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    margin-left: 50px;
+    color: white;
+}
+
+.io:hover{
+    color:#dd00ff;
+    transition: all 0.3s ease-in;
+}
+
+/*The next section is the main section of the body tag*/
+main {
+
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 1;
+    min-height: calc(100vh - 80px);
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 0 !important;
+    padding-bottom: 300px;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+
+}
+
+main .title .pseudo-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+}
+
+.description, .start{
+    font-size: larger;
+}
+
+.title, .pseudo-title{
+    font-size: xx-large;
+}
+
+.getStarted button {
+    background: transparent;
+    color: var(--navbar-background-color);
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--navbar-background-color);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #ff00d9, #00ffd5, #2600ff,#00ff77);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+}
+
+.getStarted button:hover {
+    background: var(--navbar-background-color);
+    color: var(--body-background-color);
+    transform: translateY(-0.5em);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+
+    &::before {
+        opacity: 1;
+    }
+
+    & ::after{
+        content:'';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(45deg,var(--navbar-background-color), rgb(196, 90, 33));
+        z-index: -1;
+    }
+}
+
+.getStarted button:active{
+    transform: translateY(1em);
+    box-shadow: 0 5px 15px rgba(157, 255, 0, 0.3);
+}
+
+.getStarted button:focus{
+    outline: none;
+    box-shadow: 0 5px 15px rgba(157, 255, 0, 0.3);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.description, .start {
+    max-width: 600px;
+}
+
+.image {
+    margin-left: 20px;
+}
+
+.getStarted {
+    margin-top: 20px;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+}
+
+.image img {
+    width: 200px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.title, .pseudo-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.description, .start {
+    margin: 10px 0;
+}
+
+.go {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.list li{
+    color: var(--body-text-color);
+    display: flex;
+    overflow: visible;
+}
+
+/*The body of the main of the task.html*/
+main .main-task{
+    display: flex;
+
+}
+
+.tasks{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.tasks:hover{
+    color: white;
+}
+
+.tasks button{
+    height: 80px;
+    width: 400px;
+    background: transparent;
+    color: var(--navbar-background-color);
+    padding:1rem 1rem;
+    border: solid 2px var(--navbar-background-color);
+    border-radius: 30px;
+    cursor: pointer;
+    position : relative;
+    overflow: hidden;
+    z-index: 1;
+    font-size: 28px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        opacity: 0.5;
+        z-index: -1;
+        filter: blur(1.5rem);
+    }
+}
+
+.tasks button:hover{
+    padding: 1rem 2.5rem;
+    border: 5px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size:35px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    color:white;
+    transition: all 0.4s ease;
+    background: conic-gradient(rgb(8, 73, 238),rgb(1, 150, 242),rgb(0, 255, 242),rgb(3, 193, 76),rgb(8, 73, 238));
+    transform: translateZ(7px);
+
+    &::before{
+        opacity: 1;
+        color: white
+    }
+}
+
+.tasks button:after{
+    transform: translateZ(1em);
+    box-shadow: 0 5px 15px rgba(157, 255, 0, 0.3);
+}
+
+.tasks button:active{
+    transform: translateZ(1em);
+    box-shadow: 0 5px 15px rgba(157, 255, 0, 0.3);
+}
+
+.tasks button:focus{
+    outline: none;
+    box-shadow: 0 5px 15px rgba(157, 255, 0, 0.3);
+}
+
+.compress button{
+    height: 80px;
+    width: 400px;
+}
+
+.compress button:hover{
+    color: white;
+}
+
+.decompress button{
+    height: 80px;
+    width: 400px;
+}
+
+.tasks{
+    display: flex;
+    gap: 50px;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+.upload-bar {
+    position: relative;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+
+/* Input Styling */
+.upload {
+    height: 40px;
+    padding: 5px 20px;
+    width: fit-content;
+    font-size: 20px;
+    border: solid 2px var(--navbar-background-color);
+    border-radius: 50px;
+    outline: none;
+    color: var(--label-text-color);
+    background: var(--body-background-color);
+    border-radius: 50px;
+}
+
+.upload-section{
+    display: none;
+}
+
+.submit{
+    height: 40px;
+    width: 120px;
+    font-size: 15px;
+    color: var(--body-background-color);
+    background-color: var(--navbar-background-color);
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.submit:hover{
+    background-color: rgb(255,69,0);
+    font-size: 18px;
+}
+
+/* the dropdown list in the tasks.html*/
+.compression-type{
+    border-radius: 20px;
+}
+
+.type{
+    background: var(--body-background-color);
+    color: var(--navbar-background-color);
+    border: 2px solid var(--navbar-background-color);
+    border-radius: 50px;
+    cursor: pointer;
+    width: 400px;
+    height: 40px;
+    font-size: 30px;
+}
+
+.dropdown-types-list{
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    flex-direction: column;
+    padding: 2rem 7.5rem;
+    list-style: none;
+    gap: 10px;
+    cursor: pointer;
+    position: absolute;
+    background: var(--navbar-background-color);
+    border: 3px solid var(--body-background-color);
+    border-radius: 20px;
+    width: 400px;
+    display: none;
+}
+
+.dropdown-types-list li:hover{
+    background: transparent;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.all-types:hover .dropdown-types-list{
+    display:block ;
+}
+
+.dropdown-types-list li{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dropdown-types-list button{
+    background:transparent;
+    width: 400px;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.dropdown-types-list button:hover{
+    background:var(--body-background-color);
+    color: var(--navbar-background-color);
+    border: 3px solid var(--body-background-color);
+    width: 400px;
+    border-radius: 10px;
+    transform: translateX(-70px);
+}
+
+.dropdown-types-list ul:hover + .upload-section{
+    margin-top: 250px;
+}
+
+#ListOfTypes{
+    display: none;
+}
+
+#ListOfTypes.show {
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+/* about.html main area */
+.about-main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.developer-notice p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.developer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.developer-links li {
+    display: flex;
+    align-items: center;
+}
+
+.developer-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.developer-links svg {
+    width: 40px;
+    height: 40px;
+}
+
+.linked-in-link svg{
+    border: 0;
+    fill:  rgb(6, 87, 153);
+    background:var(--body-background-color);
+}
+
+.github-link svg{
+    border: 0;
+    fill: black;
+    background: var(--body-background-color);
+}
+
+.developer-links span{
+    color: var(--body-text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    padding-left: 0rem;
+    background: var(--body-background-color);
+    border: 3.5px solid var(--body-background-color);
+}
+
+.discord-link svg{
+    border: 0;
+    fill: black;
+    background: var(--body-background-color);
+}
+
+
+

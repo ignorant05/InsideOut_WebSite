@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel = "stylesheet" href ="/styles/styles.css" />
+    <script type = "text/javascript" src ="/code/darkmode.js" defer></script>
+</head>
+
+<body>
+
+<header th:replace="navbar :: navbar"></header>
+
+<main>
+    <div th:class="main-container">
+        <div th:class="text-content">
+            <h1 th:class="title">InsideOut :</h1>
+            <h1 th:class="pseudo-title">For Compression & Decompression Tasks</h1>
+            <ul th:class="list">
+                <li><p th:class="description">
+                    InsideOut is a Compression and Decompression Tool used mainly in terminal.</p>
+                <li>
+                    <p th:class="description">
+                        This website is a shorthand-like feature for those who don't use (or simply don't like) the terminal & CLI. So enjoy yourself and if you find a problem, please report it to me, I'm active on my Github account so it won't take too long to reach me.
+                    </p>
+                </li>
+                <li><p th:class="start">
+                    Press the button below to get started... Enjoy.
+                </p></li>
+            </ul>
+
+
+            <div th:class="getStarted">
+                <a th:href="@{/tasks}" class="t">
+                    <button th:class="go">Get Started</button>
+                </a>
+            </div>
+        </div>
+        <div th:class="image">
+            <img src="/images/docs.png" alt="doc">
+        </div>
+    </div>
+</main>
+
+<script src="/code/decompressionLogicRequestHandling.js"></script>
+
+</body>
+</html>

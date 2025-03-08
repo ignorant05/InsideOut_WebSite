@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C&D</title>
+    <link rel = "stylesheet" href ="/styles/styles.css" />
+    <script type="text/javascript" src="/code/darkmode.js" defer></script>
+
+</head>
+<body>
+<header th:replace="navbar :: navbar"></header>
+
+<main th:class="main-task">
+
+    <section th:class="content-container">
+        <div th:class="tasks">
+            <div th:class="compress">
+                <button th:class="compress-button">Compression</button>
+            </div>
+
+            <div th:class="decompress">
+                <button th:class="decompress-button">Decompression</button>
+            </div>
+        </div>
+
+        <div th:class="'compression-type all-types'" id="ListOfTypes">
+
+            <button th:class="type">select type here</button>
+            <ul th:class="dropdown-types-list">
+                <li>
+                    <button th:class="zip">zip</button>
+                </li>
+                <li>
+                    <button th:class="tar">tar</button>
+                </li>
+                <li>
+                    <button  th:class="gz">gz</button>
+                </li>
+                <li>
+                    <button th:class="bzip2">bzip2</button>
+                </li>
+                <li>
+                    <button th:class="lz4">lz4</button>
+                </li>
+                <li>
+                    <button th:class="xz">xz</button>
+                </li>
+                <li>
+                    <button th:class="lzma">lzma</button>
+                </li>
+            </ul>
+
+        </div>
+
+        <div th:class="upload-section" th:id="up-sec">
+            <div th:class="upload-bar">
+                <input type="file" id="upload" th:class="upload" placeholder="" required spellcheck="false">
+                <button th:class="submit">Submit</button>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="/code/layout.js"></script>
+<script src="/code/compressionLogicRequestHandling.js"></script>
+<script src="/code/decompressionLogicRequestHandling.js"></script>
+
+</body>
+</html>
