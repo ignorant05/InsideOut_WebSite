@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel = "stylesheet" href ="/styles/error-page-styles.css" />
+</head>
+<body>
+    <main th:class="error-block">
+
+        <section th:class="bold">
+            <H1>404 ERROR</H1>
+        </section>
+
+        <section th:class="error-parag">
+            <h3>Looks like you lost your way... Press the button below to return to the initial checkpoint ;))</h3>
+        </section>
+
+        <section th:class="return-button">
+            <a th:href="@{/}">
+                <button th:class="error-button">RETURN TO HOME</button>
+            </a>
+        </section>
+        
+    </main>
+</body>
+</html>
