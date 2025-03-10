@@ -1,13 +1,11 @@
 package com.tool.InsideOut_WebSite.Controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@ControllerAdvice
+@Controller
 public interface errorController {
-    @RequestMapping("/error")
+    @GetMapping("/error")
     String handleError(HttpServletRequest request);
-
-    String getErrorPath();
 }
