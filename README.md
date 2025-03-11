@@ -117,11 +117,11 @@ $ sudo systemctl reload nginx
 
 > Light mode
 
-![home light mode](images/2025-03-11-23-47-12-Screenshot%20from%202025-03-11%2023-44-18.png)
+![home light mode](images/Screenshot%20from%202025-03-11%2023-44-18.png)
 
 > Dark mode
 
-![home dark mode](images/2025-03-11-23-48-14-Screenshot%20from%202025-03-11%2023-44-36.png)
+![home dark mode](images/Screenshot%20from%202025-03-11%2023-44-36.png)
 
 
 
@@ -129,11 +129,11 @@ $ sudo systemctl reload nginx
 
 > Light mode
 
-![tasks light mode](images/2025-03-11-23-51-00-image.png)
+![tasks light mode](images/Screenshot%20from%202025-03-11%2023-50-02.png)
 
 > Dark mode
 
-![tasks dark mode](images/2025-03-11-23-49-10-Screenshot%20from%202025-03-11%2023-45-09.png)
+![tasks dark mode](images/Screenshot%20from%202025-03-11%2023-44-45.png)
 
 
 
@@ -141,11 +141,11 @@ $ sudo systemctl reload nginx
 
 > Light mode
 
-![about light mode](images/2025-03-11-23-51-12-Screenshot%20from%202025-03-11%2023-49-58.png)
+![about light mode](images/Screenshot%20from%202025-03-11%2023-49-58.png)
 
 > Dark mode
 
-![about dark mode](images/2025-03-11-23-49-45-Screenshot%20from%202025-03-11%2023-45-51.png)
+![about dark mode](images/Screenshot%20from%202025-03-11%2023-45-51.png)
 
 
 
@@ -157,7 +157,7 @@ In the tasks webpage: initially ou have two options :
   
   You'll get this displayed :
   
-  ![compression](images/2025-03-11-23-53-06-image.png)
+  ![compression](images/Screenshot%20from%202025-03-11%2023-51-25.png)
 
         You just need to select the type you want from the dropdown list, then upload your file and finally press submit and it'll automatically compress and downlod the new file to your *downloads* folder.
 
@@ -165,7 +165,7 @@ In the tasks webpage: initially ou have two options :
   
   You'll get this displayed : 
   
-  ![decompression](images/2025-03-11-23-56-24-Screenshot%20from%202025-03-11%2023-56-11.png)
+  ![decompression](images/Screenshot%20from%202025-03-11%2023-56-11.png)
   
    Now you need just to upload the file and press submit and it'll automatically hanfle the decompression process if the type is available otherwise it'll drop an alert window.
 
