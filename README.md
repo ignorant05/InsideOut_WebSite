@@ -99,9 +99,9 @@ $ sudo nginx -t
 $ sudo systemctl reload nginx
 ```
 
-> The commands above are used tespectively for :
+> The commands above are used respectively for :
 > 
-> - Deleting the default Nginx condiguration because it may interfere with the WebSite configuration.
+> - Deleting the default Nginx configuration because it may interfere with the WebSite configuration.
 > 
 > - Adding the website configuration file into the ngix default configuration folder because otherwise it won't pick it up.
 > 
@@ -182,7 +182,5 @@ In the tasks webpage: initially ou have two options :
     ```bash
     $ mvn clean package && mvn install
     ```
-
-         
 
 - The nginx configuration file is in the *nginx-config* folder.
