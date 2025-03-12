@@ -38,11 +38,11 @@ This website is mainly used for DIY learning purposes so feel free to critisize.
   
   - *400 BAD REQUEST*
   
-  - 404 NOT FOUND*.
+  - *404 NOT FOUND*.
   
   - *405 METHOD NOT ALLOWED.*
   
-  - **500 INTERNAL SERVER ERROR.*
+  - *500 INTERNAL SERVER ERROR.*
   
   - *502 BAD GATEWAY.*
 
@@ -64,7 +64,7 @@ This website is mainly used for DIY learning purposes so feel free to critisize.
 
 
 
-# Only If You Wanna Run This WebSite Locally
+# Only If You Wanna Run This WebSite (server) Locally
 
 
 
@@ -90,7 +90,7 @@ if you just installed Nginx please open your teminal and type this command to av
 $ sudo ufw allow 'Nginx Full' 
 ```
 
-> The command above is ued to tell the firewall to not intercept any nginx request (if u want to run it usingf nginx not tomcat)
+> The command above is ued to tell the firewall to not intercept any nginx request (if u want to run it using nginx not tomcat)
 
 ```bash
 $ sudo rm /etc/nginx/sites-enabled/default
