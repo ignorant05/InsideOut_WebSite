@@ -1,4 +1,4 @@
-package com.tool.InsideOut_WebSite.Controllers;
+package com.tool.InsideOut_WebSite.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,9 +8,9 @@ public interface viewController {
     @GetMapping(path = "/home")
     String home();
 
-    @GetMapping(path ="/about")
+    @GetMapping(path = "/about")
     String about();
 
-    @GetMapping(path ="/tasks")
+    @GetMapping(path = "/tasks")
     String tasks();
 }

@@ -123,9 +123,7 @@ $ sudo systemctl reload nginx
 
 ![home dark mode](images/Screenshot%20from%202025-03-11%2023-44-36.png)
 
-
-
-### tasks.html (when u do the Compression & Decompression as the User)
+### tasks.html
 
 > Light mode
 
@@ -134,8 +132,6 @@ $ sudo systemctl reload nginx
 > Dark mode
 
 ![tasks dark mode](images/Screenshot%20from%202025-03-11%2023-44-45.png)
-
-
 
 ### about.html (Just a notice)
 
@@ -147,8 +143,6 @@ $ sudo systemctl reload nginx
 
 ![about dark mode](images/Screenshot%20from%202025-03-11%2023-45-51.png)
 
-
-
 ## Usage Process
 
 In the tasks webpage: initially ou have two options :
@@ -159,7 +153,7 @@ In the tasks webpage: initially ou have two options :
   
   ![compression](images/Screenshot%20from%202025-03-11%2023-51-25.png)
 
-        You just need to select the type you want from the dropdown list, then upload your file and finally press submit and it'll automatically compress and downlod the new file to your *downloads* folder.
+   You just need to select the type you want from the dropdown list, then upload your file and finally press submit and it'll automatically compress and downlod the new file to your *downloads* folder.
 
 - #### If you chose decompression
   

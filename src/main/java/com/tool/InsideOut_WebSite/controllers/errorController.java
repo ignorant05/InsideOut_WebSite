@@ -1,4 +1,4 @@
-package com.tool.InsideOut_WebSite.Controllers;
+package com.tool.InsideOut_WebSite.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
