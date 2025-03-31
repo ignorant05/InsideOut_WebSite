@@ -18,8 +18,12 @@ import com.tool.InsideOut_WebSite.helperFunctions.*;
 @Service
 public class taskServiceImpl implements taskService {
 
+  private fileConversion fconv;
+
   @Autowired
-  fileConversion fconv;
+  public void setFileConversion(fileConversion fconv) {
+    this.fconv = fconv;
+  }
 
   @Override
   public ResponseEntity<byte[]> upload(

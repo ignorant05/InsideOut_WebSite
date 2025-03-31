@@ -15,8 +15,12 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/api")
 public class taskControllerImpl implements taskController {
 
-    @Autowired
     private taskService service;
+
+    @Autowired
+    public void setTaskService(taskService service) {
+        this.service = service;
+    }
 
     @Override
     @PostMapping("/generate")
